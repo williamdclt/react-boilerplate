@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 
-import { makeSelectLocation } from 'containers/App/selectors';
+import { makeSelectLocation } from 'components/App/selectors';
 
 describe('makeSelectLocation', () => {
   it('should select the location', () => {
