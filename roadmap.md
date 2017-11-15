@@ -1,0 +1,2 @@
+- Automatically detect reducers
+- make all existing components compliant with architecture
