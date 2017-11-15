@@ -91,12 +91,6 @@ module.exports = {
       },
       {
         type: 'add',
-        path: `${config.appPath}/components/{{path}}/{{name}}/tests/.eslintrc`,
-        templateFile: './component/eslintrc.hbs',
-        abortOnFail: true,
-      },
-      {
-        type: 'add',
         path: `${config.appPath}/components/{{path}}/{{name}}/tests/{{ name }}.story.jsx`,
         templateFile: './component/story.jsx.hbs',
         abortOnFail: true,
