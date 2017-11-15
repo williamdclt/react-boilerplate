@@ -4,7 +4,8 @@ import { FormattedMessage, defineMessages } from 'react-intl';
 import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router-dom';
 
-import ConnectedLanguageProvider, { LanguageProvider } from '../index';
+import ConnectedLanguageProvider from '../LanguageProviderWrapper';
+import LanguageProvider from '../LanguageProvider';
 import configureStore from '../../../configureStore';
 
 import { translationMessages } from '../../../i18n';

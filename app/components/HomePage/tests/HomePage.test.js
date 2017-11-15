@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { shallow } from 'enzyme';
 
-import HomePage from '../index';
+import HomePage from '../HomePage';
 import messages from '../messages';
 
 describe('<HomePage />', () => {

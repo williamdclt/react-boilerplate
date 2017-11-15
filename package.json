@@ -42,7 +42,8 @@
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "storybook": "start-storybook -p 9001 -c internals/storybook"
   },
   "lint-staged": {
     "*.js": "lint:eslint"
@@ -187,10 +188,13 @@
     "collectCoverageFrom": [
       "app/**/*.{js,jsx}",
       "!app/**/*.test.{js,jsx}",
+      "!app/**/*.story.{js,jsx}",
       "!app/*/RbGenerated*/*.{js,jsx}",
-      "!app/app.js",
+      "!app/app.jsx",
       "!app/global-styles.js",
-      "!app/*/*/Loadable.{js,jsx}"
+      "!app/*/*/Loadable.{js,jsx}",
+      "!app/**/index.{js,jsx}",
+      "!app/**/*Wrapper.{js,jsx}"
     ],
     "coverageThreshold": {
       "global": {
@@ -209,7 +213,7 @@
       ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/image.js"
     },
     "setupTestFrameworkScriptFile": "<rootDir>/internals/testing/test-bundler.js",
-    "testRegex": "tests/.*\\.test\\.js$"
+    "testRegex": "tests/.*\\.test\\.jsx?$"
   },
   "dependencies": {
     "babel-polyfill": "6.23.0",
@@ -245,6 +249,7 @@
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
+    "@storybook/react": "^3.2.15",
     "add-asset-html-webpack-plugin": "2.0.1",
     "babel-cli": "6.24.1",
     "babel-core": "6.24.1",
