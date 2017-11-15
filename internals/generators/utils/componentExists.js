@@ -4,11 +4,14 @@
  * Check whether the given component exist in either the components or containers directory
  */
 
+const config = require('../../config.js');
 const fs = require('fs');
-const path = require('path');
-const pageComponents = fs.readdirSync(path.join(__dirname, '../../../app/components'));
-const pageContainers = fs.readdirSync(path.join(__dirname, '../../../app/containers'));
-const components = pageComponents.concat(pageContainers);
+
+const pageComponents = fs.readdirSync(
+  `${config.appPath}/components`,
+);
+
+const components = pageComponents;
 
 function componentExists(comp) {
   return components.indexOf(comp) >= 0;
