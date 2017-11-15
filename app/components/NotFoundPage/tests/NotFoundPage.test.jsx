@@ -2,10 +2,10 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { shallow } from 'enzyme';
 
-import NotFoundPage from '../index';
+import NotFoundPage from '../NotFoundPage';
 import messages from '../messages';
 
-describe('<NotFoundPage />', () => {
+describe('NotFoundPage', () => {
   it('should render the page message', () => {
     const renderedComponent = shallow(
       <NotFoundPage />

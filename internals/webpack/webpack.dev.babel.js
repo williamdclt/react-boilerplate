@@ -10,6 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 const logger = require('../../server/logger');
+
 const pkg = require(path.resolve(process.cwd(), 'package.json'));
 const dllPlugin = pkg.dllPlugin;
 
@@ -88,7 +89,9 @@ function dependencyHandlers() {
     ];
   }
 
-  const dllPath = path.resolve(process.cwd(), dllPlugin.path || 'node_modules/react-boilerplate-dlls');
+  const dllPath = path.resolve(
+    process.cwd(), dllPlugin.path || 'node_modules/react-boilerplate-dlls'
+  );
 
   /**
    * If DLLs aren't explicitly defined, we assume all production dependencies listed in package.json
@@ -111,12 +114,18 @@ function dependencyHandlers() {
   }
 
   // If DLLs are explicitly defined, we automatically create a DLLReferencePlugin for each of them.
-  const dllManifests = Object.keys(dllPlugin.dlls).map((name) => path.join(dllPath, `/${name}.json`));
+  const dllManifests = Object
+                        .keys(dllPlugin.dlls)
+                        .map(
+                          (name) => path.join(dllPath, `/${name}.json`)
+                        );
 
   return dllManifests.map((manifestPath) => {
     if (!fs.existsSync(path)) {
       if (!fs.existsSync(manifestPath)) {
-        logger.error(`The following Webpack DLL manifest is missing: ${path.basename(manifestPath)}`);
+        logger.error(
+          `The following Webpack DLL manifest is missing: ${path.basename(manifestPath)}`
+        );
         logger.error(`Expected to find it in ${dllPath}`);
         logger.error('Please run: npm run build:dll');
 

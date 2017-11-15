@@ -12,11 +12,11 @@ import HomePage from 'components/HomePage';
 import NotFoundPage from 'components/NotFoundPage';
 
 const App = () =>
- (<div>
-   <Switch>
-     <Route exact path="/" component={HomePage} />
-     <Route component={NotFoundPage} />
-   </Switch>
- </div>);
+  <div>
+    <Switch>
+      <Route exact path="/" component={HomePage} />
+      <Route component={NotFoundPage} />
+    </Switch>
+  </div>;
 
 export default App;
