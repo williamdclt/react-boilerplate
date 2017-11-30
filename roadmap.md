@@ -2,3 +2,4 @@
 - Add storybook plugins
 - prettier-eslint
 - sentry
+- sane starting of sagas
