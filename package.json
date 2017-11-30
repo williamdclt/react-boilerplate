@@ -44,7 +44,7 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "storybook": "start-storybook -p 9001 -c internals/storybook"
   },
-  "pre-commit": "lint:staged",
+  "pre-commit": "lint",
   "babel": {
     "plugins": [
       "styled-components"
