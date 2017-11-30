@@ -10,10 +10,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { IntlProvider } from 'react-intl';
 
-const LanguageProvider = (props) =>
-  (<IntlProvider locale={props.locale} key={props.locale} messages={props.messages[props.locale]}>
+const LanguageProvider = props => (
+  <IntlProvider
+    locale={props.locale}
+    key={props.locale}
+    messages={props.messages[props.locale]}
+  >
     {React.Children.only(props.children)}
-  </IntlProvider>);
+  </IntlProvider>
+);
 
 LanguageProvider.propTypes = {
   locale: PropTypes.string,

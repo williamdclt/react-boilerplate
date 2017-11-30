@@ -1,1 +1,5 @@
 - Automatically detect reducers
+- Fix lint-staged
+- Add storybook plugins
+- prettier-eslint
+- sentry

@@ -7,9 +7,7 @@
 const config = require('../../config.js');
 const fs = require('fs');
 
-const pageComponents = fs.readdirSync(
-  `${config.appPath}/components`,
-);
+const pageComponents = fs.readdirSync(`${config.appPath}/components`);
 
 const components = pageComponents;
 

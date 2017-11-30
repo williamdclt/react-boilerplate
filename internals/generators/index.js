@@ -6,11 +6,9 @@
 
 const componentGenerator = require('./component/index.js');
 
-module.exports = (plop) => {
+module.exports = plop => {
   plop.setGenerator('component', componentGenerator);
 
-  plop.addHelper('directory', (comp) =>
-   `components/${comp}`,
-  );
+  plop.addHelper('directory', comp => `components/${comp}`);
   plop.addHelper('curly', (object, open) => (open ? '{' : '}'));
 };

@@ -8,7 +8,10 @@ const port = require('./port');
 const setup = require('./middlewares/frontendMiddleware');
 
 const isDev = process.env.NODE_ENV !== 'production';
-const ngrok = (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel ? require('ngrok') : false;
+const ngrok =
+  (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel
+    ? require('ngrok')
+    : false;
 const resolve = require('path').resolve;
 
 const app = express();
@@ -28,7 +31,7 @@ const host = customHost || null; // Let http.Server use its default IPv6/4 host
 const prettyHost = customHost || 'localhost';
 
 // Start your app.
-app.listen(port, host, (err) => {
+app.listen(port, host, err => {
   if (err) {
     return logger.error(err.message);
   }

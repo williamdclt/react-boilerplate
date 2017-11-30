@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { makeSelectLocale } from 'redux/language/selectors';
+import { makeSelectLocale } from 'redux/language/language.selectors';
 import LanguageProvider from './LanguageProvider';
 
-const mapStateToProps = createSelector(
-  makeSelectLocale(),
-  (locale) => ({ locale })
-);
+const mapStateToProps = createSelector(makeSelectLocale(), locale => ({
+  locale,
+}));
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   dispatch,
 });
 

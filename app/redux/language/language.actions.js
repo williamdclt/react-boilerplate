@@ -1,12 +1,4 @@
-/*
- *
- * LanguageProvider actions
- *
- */
-
-import {
-  CHANGE_LOCALE,
-} from './constants';
+import { CHANGE_LOCALE } from './language.constants';
 
 export function changeLocale(languageLocale) {
   return {
