@@ -40,11 +40,9 @@ export default ({ key, saga, mode }) => WrappedComponent => {
     injectors = getInjectors(this.context.store);
 
     render() {
-      console.log('rendering');
       return <WrappedComponent {...this.props} />;
     }
   }
 
-  console.log('wat');
   return hoistNonReactStatics(InjectSaga, WrappedComponent);
 };

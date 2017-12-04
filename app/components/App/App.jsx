@@ -10,13 +10,17 @@ import { Switch, Route } from 'react-router-dom';
 
 import { HomePage, NotFoundPage } from 'components/pages';
 
-const App = () => (
-  <div>
-    <Switch>
-      <Route exact path="/" component={HomePage} />
-      <Route component={NotFoundPage} />
-    </Switch>
-  </div>
-);
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </div>
+    );
+  }
+}
 
 export default App;
