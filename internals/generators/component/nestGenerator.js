@@ -82,6 +82,12 @@ module.exports = {
         templateFile: './component/wrapper.jsx.hbs',
         abortOnFail: true,
       });
+      actions.push({
+        type: 'add',
+        path: `${basePath}/{{path}}/tests/{{name}}Wrapper.test.jsx`,
+        templateFile: './component/wrapper.test.jsx.hbs',
+        abortOnFail: true,
+      });
     }
     return actions;
   },
