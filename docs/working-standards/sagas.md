@@ -68,7 +68,7 @@ Imagine you have a `Login` page, you want your `loginSaga` to run when this page
 ```
 // LoginPageWrapper.jsx
 import injectSaga from 'utils/injectSaga';
-import { loginSaga } from 'redux/login/login.saga';
+import { loginSaga } from 'modules/login/login.saga';
 import LoginPage from './LoginPage';
 
 const LoginPageWrapper = injectSaga({saga: loginSaga, key: 'login'})(LoginPage);

@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE } from 'redux/language/language.constants';
+import { DEFAULT_LOCALE } from 'modules/language/language.constants';
 import { formatTranslationMessages } from '../i18n';
 
 jest.mock('../translations/en.json', () => ({

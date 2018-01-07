@@ -15,7 +15,7 @@ const presets = pkg.babel.presets;
 const plugins = pkg.babel.plugins || [];
 
 const i18n = require('../../app/i18n');
-import { DEFAULT_LOCALE } from 'redux/language/constants';
+import { DEFAULT_LOCALE } from 'modules/language/constants';
 
 require('shelljs/global');
 
