@@ -1,5 +1,6 @@
-- Automatically detect reducers
+- Make saner reducer declaration
 - Add storybook plugins
-- prettier-eslint
-- sentry
+- prettier-eslint?
 - sane starting of sagas
+- .component, .container?
+
