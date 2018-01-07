@@ -1,12 +1,8 @@
 /**
  * Asynchronously loads the component for HomePage
  */
-import Loadable from 'react-loadable';
-import injectSaga from 'utils/injectSaga';
+import HomeLoadable from './Loadable';
 
-const HomeLoadable = Loadable({
-  loader: () => import('./HomePage'),
-  loading: () => null,
-});
+const HomeWrapper = HomeLoadable;
 
-export default HomeLoadable;
+export default HomeWrapper;
