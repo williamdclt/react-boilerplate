@@ -8,10 +8,8 @@
 
 const config = require('../../config.js');
 const componentExists = require('../utils/componentExists');
-const fullGenerator = require('./fullGenerator');
-const nestGenerator = require('./nestGenerator');
+const sagaGenerator = require('./saga');
 
 module.exports = {
-  full: fullGenerator,
-  nest: nestGenerator,
+  saga: sagaGenerator,
 };
