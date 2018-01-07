@@ -159,9 +159,8 @@
       "!app/*/RbGenerated*/*.{js,jsx}",
       "!app/app.jsx",
       "!app/global-styles.js",
-      "!app/*/*/Loadable.{js,jsx}",
-      "!app/**/index.{js,jsx}",
-      "!app/**/*Wrapper.{js,jsx}"
+      "!app/**/*/Loadable.{js,jsx}",
+      "!app/**/index.{js,jsx}"
     ],
     "coverageThreshold": {
       "global": {
