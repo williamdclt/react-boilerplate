@@ -4,7 +4,7 @@ import { FormattedMessage, defineMessages } from 'react-intl';
 import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router-dom';
 
-import ConnectedLanguageProvider from '../LanguageProviderWrapper';
+import LanguageProviderWrapper from '../LanguageProvider.wrap';
 import LanguageProvider from '../LanguageProvider';
 import configureStore from '../../../configureStore';
 
@@ -40,9 +40,9 @@ describe('<ConnectedLanguageProvider />', () => {
   it('should render the default language messages', () => {
     const renderedComponent = mount(
       <Provider store={store}>
-        <ConnectedLanguageProvider messages={translationMessages}>
+        <LanguageProviderWrapper messages={translationMessages}>
           <FormattedMessage {...messages.someMessage} />
-        </ConnectedLanguageProvider>
+        </LanguageProviderWrapper>
       </Provider>,
     );
     expect(
