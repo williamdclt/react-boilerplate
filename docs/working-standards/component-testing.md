@@ -200,4 +200,13 @@ describe('<Button />', () => {
 
 And that's how you unit test your components and make sure they work correctly!
 
+The only gotcha is the possibility of running into a circular dependency inside a test. This is something that for some reason works in the browser but not in tests.
+A workaround is to mock the wrapper of the component, to break the potential circular dependency:
+
+```
+jest.mock('../{{ name }}.wrap')
+```
+
+This is automatically generated when you generate a component.
+
 *Continue to learn how to test your components [remotely](remote-testing.md)!*
