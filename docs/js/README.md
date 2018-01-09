@@ -2,8 +2,7 @@
 
 ## State management
 
-This boilerplate manages application state using [Redux](redux.md), makes it
-immutable with [`ImmutableJS`](immutablejs.md) and keeps access performant
+This boilerplate manages application state using [Redux](redux.md) and keeps access performant
 via [`reselect`](reselect.md).
 
 For managing asynchronous flows (e.g. logging in) we use [`redux-saga`](redux-saga.md).
@@ -11,26 +10,27 @@ For managing asynchronous flows (e.g. logging in) we use [`redux-saga`](redux-sa
 For routing, we use [`react-router` in combination with `react-router-redux`](routing.md).
 
 We include a generator for components, containers, sagas, routes and selectors.
-Run `npm run generate` to choose from the available generators, and automatically
+Run `yarn generate` to choose from the available generators, and automatically
 add new parts of your application!
 
 > Note: If you want to skip the generator selection process,
-  `npm run generate <generator>` also works. (e.g. `npm run generate container`)
+  `yarn generate <generator>` also works. (e.g. `yarn generate component`)
 
 ### Learn more
 
 - [Redux](redux.md)
-- [ImmutableJS](immutablejs.md)
 - [reselect](reselect.md)
 - [redux-saga](redux-saga.md)
 - [react-intl](i18n.md)
 - [routing](routing.md)
 - [Asynchronously loaded components](async-components.md)
 
-## Architecture: `components` and `containers`
+## Architecture: `components` and `wrappers`
 
 We adopted a split between stateless, reusable components called (wait for it...)
-`components` and stateful parent components called `containers`.
+`components` and stateful parent components called `wrappers`. We do not use the
+terminology `containers` because it is commonly attached to redux's `connect`, which
+is only a higher order component amongst all the HoCs that can be in your wrapper.
 
 ### Learn more
 

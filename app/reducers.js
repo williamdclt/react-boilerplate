@@ -2,8 +2,7 @@
  * Combine all reducers in this file and export the combined reducers.
  */
 
-import { combineReducers } from 'redux-immutable';
-import { fromJS } from 'immutable';
+import { combineReducers } from 'redux';
 import { LOCATION_CHANGE } from 'react-router-redux';
 
 import languageReducer from 'modules/language/language.reducer';
@@ -17,9 +16,9 @@ import languageReducer from 'modules/language/language.reducer';
  */
 
 // Initial routing state
-const routeInitialState = fromJS({
+const routeInitialState = {
   location: null,
-});
+};
 
 /**
  * Merge route into the global application state
@@ -28,9 +27,10 @@ function routeReducer(state = routeInitialState, action) {
   switch (action.type) {
     /* istanbul ignore next */
     case LOCATION_CHANGE:
-      return state.merge({
+      return {
+        ...state,
         location: action.payload,
-      });
+      };
     default:
       return state;
   }
