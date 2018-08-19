@@ -1,0 +1,39 @@
+jobs:
+  frontend:
+    docker:
+      - image: circleci/node:8.9
+
+    environment:
+      NODE_ENV: test
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v2-{% templatetag openvariable %} checksum "frontend/package.json" {% templatetag closevariable %}
+
+      # Only install deps if cache hasn't done it for us already
+      - run:
+          name: Install dependencies
+          working_directory: frontend
+          command: |
+              [ -d node_modules ] ||
+              yarn
+
+      - run:
+          name: Run tests
+          working_directory: frontend
+          command: yarn test
+
+      - save_cache:
+          key: v2-{% templatetag openvariable %} checksum "frontend/package.json" {% templatetag closevariable %}
+          paths:
+            - ~/.yarn
+            - ~/project/node_modules
+
+workflows:
+  version: 2
+  stack:
+    jobs:
+      - frontend
