@@ -1,7 +1,7 @@
 jobs:
   frontend:
     docker:
-      - image: circleci/node:8.9
+      - image: circleci/node:8.10
 
     environment:
       NODE_ENV: test
